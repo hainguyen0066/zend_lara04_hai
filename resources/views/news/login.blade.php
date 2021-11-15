@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="author" content="Kodinger">
     <title>Login Page</title>
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('/login/bootstrap/css/bootstrap.min.css')}} ">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/login/css/my-login.css')}} ">
 </head>
 <body class="my-login-page">
 <section class="h-100">

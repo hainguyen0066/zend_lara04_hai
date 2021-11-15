@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthLoginRequest as MainRequest;
 use App\Models\UserModel;
+use Illuminate\Support\Facades\Redirect;
+use MongoDB\Driver\Session;
 
 class AuthController extends Controller
 {
@@ -20,6 +22,9 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $prevUrl = url()->previous();
+        $request->session()->put('prevUrl', $prevUrl);
+
         return view($this->pathViewController . 'login');
     }
 
@@ -38,8 +43,10 @@ class AuthController extends Controller
                 return redirect()->route($this->controllerName . '/login')->with('news_notify', 'Tài khoản hoặc mật khẩu không chính xác!');
 
             $request->session()->put('userInfo', $userInfo);
-
-            return redirect()->route('home');
+            if (Session('prevUrl')) {
+                return redirect(session()->pull('prevUrl'));
+            }
+            return redirect()-route('home');
         }
     }
 
