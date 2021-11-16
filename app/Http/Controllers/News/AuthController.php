@@ -5,8 +5,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\AuthLoginRequest as MainRequest;
 use App\Models\UserModel;
-use Illuminate\Support\Facades\Redirect;
-use MongoDB\Driver\Session;
 
 class AuthController extends Controller
 {
