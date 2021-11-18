@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
+            'host' => 'smtp.googlemail.com',
+            'port' => '465',
+            'encryption' => 'ssl',
+            'username' => 'hainguyenhai0@gmail.com',
+            'password' => 'Hai12345@',
             'timeout' => null,
             'auth_mode' => null,
         ],
@@ -71,6 +71,13 @@ return [
             'transport' => 'array',
         ],
     ],
+    'stream' => [
+        'ssl' => [
+            'allow_self_signed' => true,
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -84,8 +91,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => 'hainguyenhai0@gmail.com',
+        'name' => 'Demo Mail Send ZEND',
     ],
 
     /*

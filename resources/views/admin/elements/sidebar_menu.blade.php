@@ -22,7 +22,9 @@
             <li><a href="{{ route('slider') }}"><i class="fa fa-sliders"></i> Silders</a></li>
             <li><a href="{{ route('rss') }}"><i class="fa fa-newspaper-o"></i> Rss</a></li>
             <li><a href="{{ route('user/change-password') }}"><i class="fa fa-user"></i> Quản Lý Mật Khẩu</a></li>
-            <li><a href="{{ route('menu') }}"><i class="fa fa-sitemap"></i> Quản Lý menuu</a></li>
+            <li><a href="{{ route('menu') }}"><i class="fa fa-sitemap"></i> Quản Lý menu</a></li>
+            <li><a href="{{ route('filemanager') }}"><i class="fa fa-sitemap"></i> Quản Lý ảnh</a></li>
+            <li><a href="{{ route('setting/form') }}"><i class="fa fa-gear"></i>Quản Lý Settings</a></li>
         </ul>
     </div>
 </div>

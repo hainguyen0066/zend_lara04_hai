@@ -7,6 +7,7 @@
             <h3>Dashboard</h3>
         </div>
     </div>
+    @include ('admin.templates.zvn_notify')
     <div class="row">
        @if(!empty($data))
         <div class="col-md-12 col-sm-12 col-xs-12">

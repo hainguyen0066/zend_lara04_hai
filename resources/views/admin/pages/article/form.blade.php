@@ -11,7 +11,7 @@
     $inputHiddenID    = Form::hidden('id', @$item['id']);
     $inputHiddenThumb = Form::hidden('thumb_current', @$item['thumb']);
 
-  
+
     $elements = [
         [
             'label'   => Form::label('name', 'Name', $formLabelAttr),
@@ -40,14 +40,13 @@
 @section('content')
     @include ('admin.templates.page_header', ['pageIndex' => false])
     @include ('admin.templates.error')
-
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 @include('admin.templates.x_title', ['title' => 'Form'])
                 <div class="x_content">
                     {{ Form::open([
-                        'method'         => 'POST', 
+                        'method'         => 'POST',
                         'url'            => route("$controllerName/save"),
                         'accept-charset' => 'UTF-8',
                         'enctype'        => 'multipart/form-data',

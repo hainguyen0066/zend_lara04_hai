@@ -51,14 +51,7 @@
 2. Body and some general stuff
 *********************************/
 
-*
-{
-	margin: 0;
-	padding: 0;
-	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	text-shadow: rgba(0,0,0,.01) 0 0 1px;
-}
+
 body
 {
 	font-family: 'HelveticaNeueLTPro', sans-serif;
@@ -266,7 +259,7 @@ section
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	
+
 }
 .nopadding
 {
@@ -1323,7 +1316,7 @@ section
 }
 .post_author_name a,
 .post_date a
-{	
+{
 	margin-left: 5px;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;

@@ -13,10 +13,10 @@
 <link href="{{ asset('admin/asset/nprogress/nprogress.css') }}" rel="stylesheet">
 <!-- iCheck -->
 <link href="{{ asset('admin/asset/iCheck/skins/flat/green.css') }}" rel="stylesheet">
+{{--task input--}}
+<link href="{{ asset('admin/js/taginput/tagify.css') }}" rel="stylesheet">
 <!-- bootstrap-progressbar -->
 <link href="{{ asset('admin/asset/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
-{{-- Edit table --}}
-<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 <!-- Custom Theme Style -->
 <link href="{{ asset('admin/css/custom.min.css') }}" rel="stylesheet">
 <!-- Custom Theme Style -->

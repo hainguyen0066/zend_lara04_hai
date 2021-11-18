@@ -3,7 +3,7 @@
 <head>
     @include('admin.elements.head')
 </head>
-<body class="nav-sm"> 
+<body class="nav-sm">
     {{-- nav-md --}}
 <div class="container body">
     <div class="main_container">
@@ -23,5 +23,6 @@
     </div>
 </div>
 @include('admin.elements.script')
+@stack('extra-script')
 </body>
 </html>

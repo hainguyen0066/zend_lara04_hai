@@ -150,11 +150,4 @@ $(document).ready(function () {
         });
     });
 
-    $('.quick-edit').editable({
-        mode: 'popup',
-        type: 'number',
-        step: '1.00',
-        min: '0.00',
-        max: '24'
-    });
 });

@@ -13,7 +13,6 @@
 $prefixAdmin = config('zvn.url.prefix_admin');
 
 
-
 Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin', 'middleware' => ['permission.admin']], function () {
     // ============================== DASHBOARD ==============================
     $prefix         = 'dashboard';
@@ -105,6 +104,29 @@ Route::group(['prefix' => $prefixAdmin, 'namespace' => 'Admin', 'middleware' => 
         Route::get('change-type-open-{typeOpen}/{id}',     [ 'as' => $controllerName . '/typeOpen',     'uses' => $controller . 'changeTypeOpen']);
     });
 
+    Route::get('/up-anh',[
+        'as' => 'filemanager',
+        'uses' => 'FileManagerController@index'
+    ]);
+
+//    Route::group(['prefix' => 'laravel-filemanager'], function () {
+//        \UniSharp\LaravelFilemanager\Lfm::routes();
+//    });
+
+    // ============================== SETTING ==============================
+
+    $prefix         = 'setting';
+    $controllerName = 'setting';
+
+    Route::group(['prefix' =>  $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName)  . 'Controller@';
+        Route::get('/',                             [ 'as' => $controllerName,                  'uses' => $controller . 'index' ]);
+        Route::get('form/{id?}',                    [ 'as' => $controllerName . '/form',        'uses' => $controller . 'form'])->where('id', '[0-9]+');
+        Route::post('save',                         [ 'as' => $controllerName . '/save',        'uses' => $controller . 'save']);
+        Route::post('save-email',                   [ 'as' => $controllerName . '/save-email',        'uses' => $controller . 'saveEmail']);
+        Route::post('save-social',                  [ 'as' => $controllerName . '/save-social',        'uses' => $controller . 'saveSocial']);
+
+    });
 });
 
 // bai-viet/suc-khoe-3.php

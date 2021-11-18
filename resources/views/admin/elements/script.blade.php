@@ -11,9 +11,10 @@
 <!-- iCheck -->
 <script src="{{ asset('admin/asset/iCheck/icheck.min.js') }}"></script>
 {{-- Edit table --}}
-<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 <script src="{{asset('admin/js/ckeditor/ckeditor.js')}}"></script>
+<script src="{{asset('admin/js/taginput/tagify.js')}}"></script>
 <!-- Custom Theme Scripts -->
+
 
 <script src="{{ asset('admin/js/notify.min.js') }}"></script>
 <script src="{{ asset('admin/js/custom.min.js') }}"></script>

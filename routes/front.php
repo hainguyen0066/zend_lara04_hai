@@ -72,7 +72,27 @@ Route::group(['namespace' => 'News'], function () {
         Route::get('/get-gold',                             [ 'as' => "$controllerName/get-gold",                  'uses' => $controller . 'getGold' ]);
         Route::get('/get-coin',                             [ 'as' => "$controllerName/get-coin",                  'uses' => $controller . 'getCoin' ]);
     });
+
+    // ====================== CONTACT ========================
+    $prefix         = '';
+    $controllerName = 'contact';
+    Route::group(['prefix' =>  $prefix], function () use ($controllerName) {
+        $controller = ucfirst($controllerName)  . 'Controller@';
+        Route::get('/lien-he',                             [ 'as' => "$controllerName/index",                  'uses' => $controller . 'index' ]);
+        Route::post('/post-send-mail',                             [ 'as' => "$controllerName/sendMail",                  'uses' => $controller . 'sendMail' ]);
+        Route::get('/send-mail', function () {
+            \Illuminate\Support\Facades\Mail::to('hainguyenhai0066@gmail.com')->send(new  \App\Mail\ContactUser(['name' => 'ok']));
+
+            return 'ok seen';
+        });
+    });
+
+
+
 });
+    // ====================== CONTACT ========================
+
+
 
 // bai-viet/suc-khoe-3.php
 
