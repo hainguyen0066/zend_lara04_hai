@@ -9,7 +9,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/owl.carousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/animate.css')}}">
-<link href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet"/>
+
+<link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 <link rel="stylesheet" type="text/css" href="{{asset('news/css/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('/news/css/responsive.css')}}">
 <link rel="stylesheet" type="text/css" href="{{ asset('/news/css/my-style.css')}}">

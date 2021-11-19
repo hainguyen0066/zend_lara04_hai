@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => 'smtp.googlemail.com',
+            'host' => 'smtp.gmail.com',
             'port' => '465',
             'encryption' => 'ssl',
             'username' => 'hainguyenhai0@gmail.com',
-            'password' => 'Hai12345@',
+            'password' => 'lgsupyicribgtywg',
             'timeout' => null,
             'auth_mode' => null,
         ],

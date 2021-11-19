@@ -15,7 +15,7 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('userInfo'))  return redirect()->route('home');
+        if(@$request->session()->has('userInfo'))  return redirect()->route('home');
 
         return $next($request);
     }

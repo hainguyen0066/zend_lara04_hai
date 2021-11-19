@@ -12,10 +12,11 @@
 <script src="{{ asset('admin/asset/iCheck/icheck.min.js') }}"></script>
 {{-- Edit table --}}
 <script src="{{asset('admin/js/ckeditor/ckeditor.js')}}"></script>
+{{-- --}}
 <script src="{{asset('admin/js/taginput/tagify.js')}}"></script>
 <!-- Custom Theme Scripts -->
-
-
+<script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
+{{-- file manager --}}
 <script src="{{ asset('admin/js/notify.min.js') }}"></script>
 <script src="{{ asset('admin/js/custom.min.js') }}"></script>
 <script src="{{ asset('admin/js/my-js.js') }}"></script>

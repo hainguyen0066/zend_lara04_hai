@@ -9,6 +9,10 @@ class SettingModel extends AdminModel
 {
 
     protected $settingKey = '';
+    // attribute casting parse dữ liệu ra mong muốn
+    protected $casts = [
+        'value' => 'array',
+    ];
 
     public function __construct()
     {
@@ -19,6 +23,7 @@ class SettingModel extends AdminModel
             'key' => 'key_value',
             'value' => 'value'
         ];
+
     }
 
     public function menus() {
@@ -83,22 +88,22 @@ class SettingModel extends AdminModel
     {
 
         if ($options['task'] == 'get-setting-generate') {
-            $result = self::select('*')->where('key_value', 'setting-generate')->first()->toArray();
-            $result = json_decode($result['value'], true);
+            $result = self::select('*')->where('key_value', 'setting-generate')->first();
+            $result = $result->value;
 
             return $result;
         }
 
         if ($options['task'] == 'get-setting-email') {
-            $result = self::select('*')->where('key_value', 'setting-email')->first()->toArray();
-            $result = json_decode($result['value'], true);
+            $result = self::select('*')->where('key_value', 'setting-email')->first();
+            $result = $result->value;
 
             return $result;
         }
 
         if ($options['task'] == 'get-setting-social') {
-            $result = self::select('*')->where('key_value', 'setting-social')->first()->toArray();
-            $result = json_decode($result['value'], true);
+            $result = self::select('*')->where('key_value', 'setting-social')->first();
+            $result = $result->value;
 
             return $result;
         }
