@@ -21,9 +21,9 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $prevUrl = url()->previous();
-        $request->session()->put('prevUrl', $prevUrl);
+       $request->session()->put('prevUrl', $prevUrl);
 
-        return view($this->pathViewController . 'login');
+       return view($this->pathViewController . 'login');
     }
 
     // middelware

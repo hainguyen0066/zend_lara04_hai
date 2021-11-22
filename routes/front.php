@@ -51,7 +51,7 @@ Route::group(['namespace' => 'News'], function () {
 
     // ====================== LOGIN ========================
     // news69/login
-    $prefix         = '';
+    $prefix         = 'auth';
     $controllerName = 'auth';
 
     Route::group(['prefix' =>  $prefix], function () use ($controllerName) {
