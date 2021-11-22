@@ -10,15 +10,18 @@ class ContactController extends FrontController
 {
     private $pathViewController = 'news.pages.contact.';  // slider
     private $controllerName     = 'contact';
-    private $params             = [];
+    private $bccEmails;
+    private $params     = [];
 
-    public function __construct()
+    public function __construct(SettingModel $settingModel)
     {
         view()->share('controllerName', $this->controllerName);
+        $this->bccEmails = SettingModel::where('key_value', 'setting-email')->first();
     }
 
     public function index(Request $request, SettingModel $settingModel)
     {
+
         $info = $settingModel->getItem(null, ['task' => 'get-setting-generate' ]);
         $email = $settingModel->getItem(null, ['task' => 'get-setting-email' ]);
         $breadCrumbName['name'] = 'Liên Hệ';
@@ -32,12 +35,12 @@ class ContactController extends FrontController
         $details['email'] = $request->email;
         $details['phone'] = $request->phone;
         $details['message'] = $request->message;;
-
-        Mail::to('hainguyenhai0@gmail.com')->send(new ContactUser($details));
+        $bccUser = json_decode($this->bccEmails->value['bcc'], true);
+        foreach ($bccUser as $value) {
+            Mail::to($value['value'])->send(new ContactUser($details));
+        }
+        Mail::to($details['email'])->send(new ContactUser($details));
 
         return 'Email has been send';
-
     }
-
-
 }

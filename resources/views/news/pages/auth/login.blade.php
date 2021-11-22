@@ -1,6 +1,5 @@
 @extends('news.login')
 @section('content')
-    
     <div class="card fat">
         <div class="card-body">
             <h4 class="card-title">Đăng nhập</h4>

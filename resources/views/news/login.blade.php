@@ -17,8 +17,6 @@
     </div>
 </section>
 
-<script src="{{asset('login/js/jquery.min.js')}}"></script>
-<script src="{{asset('login/bootstrap/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('login/js/my-login.js')}}"></script>
+
 </body>
 </html>
