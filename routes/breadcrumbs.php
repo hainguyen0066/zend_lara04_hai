@@ -23,7 +23,7 @@ Breadcrumbs::for('category', function ($trail, $category) {
     ]));
 });
 
-// Home > Chuyên Mục > Bài Viết
+// Home > Chuyên Mục > Bài Viết update
 
 Breadcrumbs::for('article', function ($trail, $article) {
     $category = \App\Models\CategoryModel::where('id', $article['category_id'])->first()->toArray();
