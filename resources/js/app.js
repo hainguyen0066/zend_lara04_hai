@@ -1,7 +1,6 @@
-require('./bootstrap');
-require('../news/js/jquery-3.2.1.min')
-require('../news/js/bootstrap.min')
-require('../news/js/popper')
+window.$ = window.jQuery = window.jQuery = require('../news/js/jquery-3.2.1.min.js')
+require('../news/js/bootstrap.min.js')
+require('../news/js/popper.js')
 require('../news/js/greensock/TweenMax.min')
 require('../news/js/greensock/TimelineMax.min')
 require('../news/js/greensock/animation.gsap.min')

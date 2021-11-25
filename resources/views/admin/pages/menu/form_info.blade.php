@@ -7,6 +7,8 @@
 
     $statusValue      = ['default' => 'Select status', 'active' => config('zvn.template.status.active.name'), 'inactive' => config('zvn.template.status.inactive.name')];
     $typeOpenValue    = ['default' => 'Select level', 'current' => 'Current', 'new_tab' => 'New-Tab'];
+    $typeIsCategory  =  [ 0 => 'No', 1 => 'Yes'];
+
 
     $inputHiddenID    = Form::hidden('id', @$item['id']);
     $inputHiddenTask  = Form::hidden('task', 'add');
@@ -26,6 +28,10 @@
         [
             'label'   => Form::label('type_open', 'Type Open', $formLabelAttr),
             'element' => Form::select('type_open', $typeOpenValue, @$item['type_open'], $formInputAttr)
+        ],
+        [
+            'label'   => Form::label('is_category', 'Is Category', $formLabelAttr),
+            'element' => Form::select('is_category', $typeIsCategory, @$item['is_category'], $formInputAttr)
         ],
          [
             'label'   => Form::label('link', 'Link', $formLabelAttr),

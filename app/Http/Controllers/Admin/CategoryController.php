@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\CategoryRecusive;
 use App\Http\Controllers\Controller;
 use App\Models\CategoryModel;
 use Illuminate\Http\Request;
@@ -12,12 +13,14 @@ class CategoryController extends Controller
 {
     private $pathViewController = 'admin.pages.category.';
     private $controllerName     = 'category';
+    protected $categoryRecusive;
     private $params             = [];
     private $model;
 
-    public function __construct()
+    public function __construct(CategoryRecusive $categoryRecusive)
     {
         $this->model = new MainModel();
+        $this->categoryRecusive = $categoryRecusive;
         $this->params["pagination"]["totalItemsPerPage"] = 10;
         view()->share('controllerName', $this->controllerName);
     }
@@ -44,10 +47,14 @@ class CategoryController extends Controller
         if ($request->id !== null) {
             $params["id"] = $request->id;
             $item = $this->model->getItem($params, ['task' => 'get-item']);
+            $categoryOptions = $this->categoryRecusive->CategoryRecusiveEdit($item['parent_id']);
+        } else {
+            $categoryOptions = $this->categoryRecusive->CategoryRecusiveAdd();
         }
 
         return view($this->pathViewController .  'form', [
-            'item'        => $item
+            'item'        => $item,
+            'categoryOptions'  => $categoryOptions
         ]);
     }
 
@@ -64,6 +71,7 @@ class CategoryController extends Controller
                 $notify = "Cập nhật phần tử thành công!";
             }
             $this->model->saveItem($params, ['task' => $task]);
+
             return redirect()->route($this->controllerName)->with("zvn_notify", $notify);
         }
     }

@@ -6,10 +6,17 @@
     $formInputAttr = config('zvn.template.form_input');
     $formLabelAttr = config('zvn.template.form_label');
     $dataMenus     = \App\Models\MenuModel::all()->pluck('name', 'id')->toArray();
+    $parentCategory = \App\Models\CategoryModel::where('parent_id', 0)->get();
     $dataMenus[0]  = 'Select Menus';
     ksort($dataMenus);
-    $statusValue   = ['default' => 'Select status', 'active' => config('zvn.template.status.active.name'), 'inactive' => config('zvn.template.status.inactive.name')];
 
+    $parentCategory = \App\Models\CategoryModel::where('parent_id', 0)->pluck('id', 'name')->toArray();
+    $parentCategory = array_flip($parentCategory);
+    $parentCategory['0'] = 'Root';
+    $parentCategory['Default'] = 'Select Parent category';
+
+    ksort($parentCategory);
+    $statusValue   = ['default' => 'Select status', 'active' => config('zvn.template.status.active.name'), 'inactive' => config('zvn.template.status.inactive.name')];
     $inputHiddenID    = Form::hidden('id', @$item['id']);
 
     $elements = [
@@ -20,10 +27,6 @@
         [
             'label'   => Form::label('status', 'Status', $formLabelAttr),
             'element' => Form::select('status', $statusValue, @$item['status'], $formInputAttr)
-        ],
-        [
-            'label'   => Form::label('menu_id', 'Menu', $formLabelAttr),
-            'element' => Form::select('menu_id', $dataMenus, @$item['menu_id'] ,$formInputAttr)
         ],
         [
             'element' => $inputHiddenID . Form::submit('Save', ['class'=>'btn btn-success']),
@@ -50,6 +53,13 @@
                         'class'          => 'form-horizontal form-label-left',
                         'id'             => 'main-form' ])  }}
                         {!! FormTemplate::show($elements)  !!}
+                        <div class="form-group">
+                            <label>Chọn Category Cha</label>
+                            <select class="form-control" name="parent_id" id="" >
+                                <option value="0">Chọn Menu Cha</option>
+                                {!! $categoryOptions !!}
+                            </select>
+                        </div>
                     {{ Form::close() }}
                 </div>
             </div>

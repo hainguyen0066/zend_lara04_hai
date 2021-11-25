@@ -30,5 +30,7 @@ class ContactUser extends Mailable
     public function build()
     {
         return $this->subject('Send mail tester')->view('emails.send_mail');
+//        return $this->markdown('emails.contact')->with(['details' => $this->details]);
+
     }
 }

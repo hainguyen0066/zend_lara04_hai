@@ -17,6 +17,10 @@ class ArticleModel extends AdminModel
         $this->crudNotAccepted     = ['_token', 'thumb_current'];
     }
 
+    public function category() {
+        return $this->belongsTo(CategoryModel::class, 'parent_id', 'id');
+    }
+
     public function listItems($params = null, $options = null)
     {
 

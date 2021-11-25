@@ -11,6 +11,7 @@
                     <th class="column-title">Name</th>
                     <th class="column-title">Status</th>
                     <th class="column-title">Type Open</th>
+                    <th class="column-title">IsCategory</th>
                     <th class="column-title">Order</th>
                     <th class="column-title">Link</th>
                     <th class="column-title">Tạo mới</th>
@@ -40,9 +41,10 @@
                             <td >{{ $index }}</td>
                             <td width="10%">{!! $name !!}</td>
                             <td width="5%">{!! $status!!}</td>
-                            <td width="10%">{!! $display!!}</td>
+                            <td width="40%">{!! $display!!}</td>
+                            <td style="text-align: center" width="10%">{{ ($val['is_category'] ? 'Yes' : 'No')  }}</td>
                             <td width="5%">{!! Form::number('order_number', $val['order'], ['data-url' => $linkInputOrder, 'style'=>'text-align: center']); !!}</td>
-                            <td width="10%"><a target="_blank" title="tab-menu" href="{{ $val['link'] }}">{{ $val['link'] }}</a></td>
+                            <td width="5%"><a target="_blank" title="tab-menu" href="{{ $val['link'] }}">{{ $val['link'] }}</a></td>
                             <td >{!! $createdHistory !!}</td>
                             <td >{!! $modifiedHistory !!}</td>
                             <td class="last">{!! $listBtnAction !!}</td>

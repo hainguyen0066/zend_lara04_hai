@@ -21,6 +21,19 @@ class CategoryModel extends AdminModel
         return $this->belongsTo('App\Models\MenuModel', 'menu_id');
     }
 
+    public function childs() {
+        return $this->hasMany(CategoryModel::class, 'parent_id', 'id');
+    }
+
+    public function articles() {
+        return $this->hasMany(CategoryModel::class, 'parent_id', 'id');
+    }
+
+    public function parent()
+    {
+        return $this->belongsTo(CategoryModel::class, 'parent_id', 'id');
+    }
+
     public function listItems($params = null, $options = null)
     {
 
@@ -112,7 +125,7 @@ class CategoryModel extends AdminModel
         }
 
         if ($options['task'] == 'news-get-item') {
-            $result = self::select('id', 'name', 'display')->where('id', $params['category_id'])->first();
+            $result = self::select('id', 'name', 'display', 'parent_id')->where('id', $params['category_id'])->first();
 
             if ($result) $result = $result->toArray();
         }

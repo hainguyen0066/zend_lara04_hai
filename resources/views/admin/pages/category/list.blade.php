@@ -25,12 +25,8 @@
                             $index           = $key + 1;
                             $class           = ($index % 2 == 0) ? "even" : "odd";
                             $id              = $val['id'];
-                            $name            = Hightlight::show($val['name'], $params['search'], 'name');
                             $status          = Template::showItemStatus($controllerName, $id, $val['status']);
                             $isHome          = Template::showItemIsHome($controllerName, $id, $val['is_home']);
-                            $display         = Template::showItemSelect($controllerName, $id, $val['display'], 'display');
-                            $dataMenus       = \App\Models\MenuModel::all()->pluck('name', 'id')->toArray();
-                            $linkMenus       = route($controllerName . '/' . 'menu', [$val['menu_id'] => 'value_new', 'id' => $id]);
                             $display         = Template::showItemSelect($controllerName, $id, $val['display'], 'display');
                             $createdHistory  = Template::showItemHistory($val['created_by'], $val['created']);
                             $modifiedHistory = Template::showItemHistory($val['modified_by'], $val['modified']);
@@ -38,10 +34,9 @@
                         @endphp
 
                         <tr class="{{ $class }} pointer">
-                            <td >{{ $index }}</td>
-                            <td width="25%">{!! $name !!}</td>
+                            <td>{{ $index }}</td>
+                            <td width="25%">{{ $val['name'] }}</td>
                             <td>{!! $status !!}</td>
-                            <td>{!! Form::select('select_change_attr', $dataMenus, $val['menu_id'] ,['class' => 'form-control' , 'data-url' => $linkMenus]) !!}</td>
                             <td>{!! $isHome  !!}</td>
                             <td>{!! $display !!}</td>
                             <td>{!! $createdHistory !!}</td>

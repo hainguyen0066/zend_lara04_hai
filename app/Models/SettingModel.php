@@ -157,4 +157,16 @@ class SettingModel extends AdminModel
             self::where('id', $params['id'])->delete();
         }
     }
+
+    public function getBccEmail($params = null, $options = null)
+    {
+        $bccEmails = self::where('key_value', 'setting-email')->first()->value['bcc'];
+        $bccEmails = json_decode($bccEmails, true);
+
+        $userBcc = array_map(function ($bcc) {
+            return $bcc['value'];
+        }, $bccEmails);
+
+        return $userBcc;
+    }
 }
