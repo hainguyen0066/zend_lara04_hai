@@ -4,6 +4,14 @@
 <meta name="description" content="Tech Mag template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/x-icon"   href="{{asset('news/images/favicons.png')}}" >
+<<<<<<< HEAD
+<link rel="stylesheet" type="text/css" href="{{asset('css/newsmix/app.css' . '?v=' . time())}}">
+{{--<link rel="stylesheet" type="text/css" href="{{asset('news/css/font-awesome-4.7.0/css/font-awesome.min.css')}}" >--}}
+{{--<link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/owl.carousel.css')}}">--}}
+{{--<link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/owl.theme.default.css')}}">--}}
+{{--<link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/animate.css')}}">--}}
+
+=======
 <link rel="stylesheet" type="text/css" href="{{asset('news/css/font-awesome-4.7.0/css/font-awesome.min.css')}}" >
 <link rel="stylesheet" type="text/css" href="{{asset('css/newsmix/app.css' . '?v=' . time())}}">
 
@@ -11,6 +19,7 @@
 {{--<link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/owl.theme.default.css')}}">--}}
 {{--<link rel="stylesheet" type="text/css" href="{{asset('news/js/OwlCarousel2-2.2.1/animate.css')}}">--}}
 
+>>>>>>> c94e8b59a77556f63807c9228b3b80462f80cbce
 {{--<link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">--}}
 {{--<link rel="stylesheet" type="text/css" href="{{asset('news/css/main_styles.css')}}">--}}
 {{--<link rel="stylesheet" type="text/css" href="{{ asset('/news/css/responsive.css')}}">--}}

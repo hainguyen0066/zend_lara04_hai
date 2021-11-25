@@ -39,8 +39,13 @@ return [
             'host' => 'smtp.gmail.com',
             'port' => '587',
             'encryption' => 'tls',
+<<<<<<< HEAD
+            'username' => 'hainguyenhai0@gmail.com',
+            'password' => 'lgsupyicribgtywg',
+=======
             'username' => 'test',
             'password' => 'test',
+>>>>>>> c94e8b59a77556f63807c9228b3b80462f80cbce
             'timeout' => null,
             'auth_mode' => null,
         ],
