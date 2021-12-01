@@ -78,7 +78,6 @@
                         </div>
 
                         <!-- Navigation -->
-                        {!! $xhtmlMenu !!}
 
                         <!-- Hamburger -->
                         <div class="hamburger ml-auto menu_mm"><i class="fa fa-bars  trans_200 menu_mm" aria-hidden="true"></i></div>
