@@ -1,10 +1,10 @@
 @php
     use App\Helpers\Template as Template;
     use App\Helpers\URL;
-    
+
     $name         = $item['name'];
     $thumb        = asset('images/article/' . $item['thumb']);
-   
+
 
     if ($showCategory) {
         $linkCategory  =  URL::linkCategory($item['category_id'], $item['category_name']);

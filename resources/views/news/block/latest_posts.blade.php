@@ -6,7 +6,7 @@
 <div class="sidebar_latest">
     <div class="sidebar_title">Bài viết mới nhất</div>
     <div class="latest_posts">
-        @foreach($itemsLatest as $item) 
+        @foreach($itemsLatest as $item)
             @php
                 $name         = $item['name'];
                 $thumb        = asset('images/article/' . $item['thumb']);

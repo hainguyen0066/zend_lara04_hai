@@ -41,18 +41,23 @@ Class CategoryRecusive {
         return $this->html;
     }
 
-//    public static function tdRecusive($itemR, $sub_mark = '')
-//    {
-//        $html = '';
-//        if ($itemR->parent_id != 0) {
-//            foreach ($itemR->childs as $item) {
-//                $html .= '|--- ' . $sub_mark . $item->name;
-//                self::tdRecusive($item, $sub_mark . '|--- ');
-//            }
-//        }else {
-//            $html .= $itemR->name;
-//        }
-//        return $html;
-//    }
+    public static function menuRecusive($categorys)
+    {
+        $html = "<ul class='list-categorys'>";
+        if ($categorys->childs) {
+            foreach ($categorys->childs as $child) {
+                $html .= "<li class='category-item'><a href=". route('category/index', [$child->name, $child->id]) ."></a></li>";
+                if ($child->childs) {
+                    self::menuRecusive($child);
+                }
+            }
+        }
+
+        $html .= "</ul>";
+
+        return $html;
+
+    }
+
 
 }
